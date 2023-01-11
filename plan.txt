@@ -1,6 +1,4 @@
-# EdTech.github.io
-
-#Educational Tech Home {
+Educational Tech Home {
 
 Navbar[ icon + Course + compact contact (copy) + search() + login()=>{redirect to student page}]
 
@@ -16,14 +14,14 @@ Footer [ coptright + Basic description + contact + follow]
 
 }
 
-#Course{
+Course{
 
 }
 
-#login{
+login{
 
 }
-#student page(after account verification){
+student page(after account verification){
 
 }
 
