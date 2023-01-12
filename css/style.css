@@ -29,6 +29,7 @@ li {
     height: 36px;
     top: -3px;
     position: absolute;
+    cursor: pointer;
 }
 
 
@@ -117,6 +118,11 @@ nav {
     top: 0;
     font-family: 'Ubuntu', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+nav li:hover {
+    background-color: rgba(56, 206, 240, 0.95);
+    border-bottom: 3px solid rgb(37, 35, 82);
+    border-radius: 5px; 
 }
 
 

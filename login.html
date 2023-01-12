@@ -1,23 +1,15 @@
-function copyPn() {
-    var CopyPhone = document.getElementById("copyPn");
-    navigator.clipboard.writeText(CopyPhone.alt);
-    window.parent.location.href = `tel:+91${CopyPhone.alt}`
-    console.log(`tel:+91${CopyPhone.alt}`)
-    // alert("Copied Phone no :  " + CopyPhone.alt);
-}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tamal Dance Academy</title>
 
 
-let toggleBS2 = 1;
+</head>
 
-const whyus = document.getElementById("whyusControl").innerHTML;
-bodySection2 = document.getElementById("whyusControl");
-function displayLogin() {
-    // console.log('feyhr'+whyus)
-    // bodySection2.style.display="none";
-    if (toggleBS2) {
-        bodySection2.innerHTML = `
+<body>
 
-        <div class="loginContainer">
+    <div class="loginContainer">
         <h1>Access Now<span id="closeForm" onclick="displayLogin()">X</span></h1>
         
         <form class="myForm" action="/contact" method="post">
@@ -86,21 +78,6 @@ function displayLogin() {
         </style>
     </div>
 
-`;
+</body>
 
-        console.log('Entering into the Login form');
-        toggleBS2=0;
-    } else {
-        bodySection2.innerHTML = `${whyus}`;
-        console.log('Exiting from the Login form');
-        toggleBS2=1;
-    }
-}
-function displayAbout() {
-    if (!toggleBS2) {
-        bodySection2.innerHTML = `${whyus}`;
-        console.log('Opening Abous [whyus]');
-        toggleBS2=0;
-    } 
-}
-
+</html>
