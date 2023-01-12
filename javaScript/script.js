@@ -7,15 +7,14 @@ function copyPn() {
 }
 
 
-let toggleBS2 = 0;
+let toggleBS2 = 1;
 
 const whyus = document.getElementById("whyusControl").innerHTML;
+bodySection2 = document.getElementById("whyusControl");
 function displayLogin() {
     // console.log('feyhr'+whyus)
-    bodySection2 = document.getElementById("whyusControl");
     // bodySection2.style.display="none";
-    toggleBS2++;
-    if (toggleBS2 % 2) {
+    if (toggleBS2) {
         bodySection2.innerHTML = `
 
         <div class="loginContainer">
@@ -90,9 +89,18 @@ function displayLogin() {
 `;
 
         console.log('Entering into the Login form');
+        toggleBS2=0;
     } else {
         bodySection2.innerHTML = `${whyus}`;
         console.log('Exiting from the Login form');
+        toggleBS2=1;
     }
+}
+function displayAbout() {
+    if (!toggleBS2) {
+        bodySection2.innerHTML = `${whyus}`;
+        console.log('Opening Abous [whyus]');
+        toggleBS2=0;
+    } 
 }
 
