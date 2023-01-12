@@ -4,13 +4,20 @@
 <head>
     <title>Tamal Dance Academy</title>
 
-
+<style>
+body{
+    background-color: antiquewhite
+}
+</style>
 </head>
 
 <body>
 
     <div class="loginContainer">
-        <h1>Access Now<span id="closeForm" onclick="displayLogin()">X</span></h1>
+        <div class="heading">
+            <h1 >Access Now</h1>
+            <span id="closeForm" onclick="displayLogin()">X</span>
+        </div>
         
         <form class="myForm" action="/contact" method="post">
             <input class="myInput" type="text" name="singIn" placeholder="User name or phone number">
@@ -28,23 +35,47 @@
 
             .loginContainer {
                 display: flex;
+                position: sticky;
                 align-items: center;
+                justify-self: center;
                 flex-direction: column;
-                min-height: 79.3vh;
-
+                min-height: 50vh;
+                width: 40vw;
+                margin: auto;
                 margin-top: 30px;
+                border: 2px solid black;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                background-color: rgb(60 183 255 / 45%);;
+            }
+            .heading{
+                display: flex ;
+                position: relative;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Indie Flower', cursive;
+                width: 40vw;
+                /* background-color: cadetblue; */
             }
             #closeForm{
-                position: absolute;
-    right: 24vw;
-    cursor: pointer;
-            }
-            h1 {
                 display: flex;
-                text-align: center;
-                margin: 12px 0;
-                font-family: 'Indie Flower', cursive;
                 font-size: 39px;
+                position: absolute;
+                padding-right:1vw ;
+                top: 0;
+                right: 0;
+                font-weight: bold;
+                cursor: pointer;
+                /* background-color: antiquewhite; */
+            }
+            #closeForm:hover{
+                color:rgb(202, 30, 32);
+            }
+            .heading h1 {
+                font-size: 39px;
+                align-items: center;
+                justify-content: center;
+                /* background-color: aquamarine; */
             }
 
             .myForm {
@@ -56,12 +87,13 @@
             }
 
             .myInput {
-                width: 40%;
+                width: 60%;
                 padding: 10px;
                 margin: 10px;
                 font-size: 16px;
                 border: 2px solid rgb(92, 0, 0);
-                border-radius: 9px;
+                border-radius: 12px;
+                outline: none;
             }
 
             .btn {
