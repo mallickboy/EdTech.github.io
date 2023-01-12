@@ -76,6 +76,8 @@ const loginForm=`
         font-size: 39px;
         align-items: center;
         justify-content: center;
+        padding:1vh 0;
+        margin-top:2vh;
         /* background-color: aquamarine; */
     }
 
@@ -134,7 +136,7 @@ function displayAbout() {
     } 
 }
 function displayLoginOnce(){
-    if (popupLogin) {
+    if (popupLogin && toggleBS2) {
         bodySection2.innerHTML = loginForm;
         console.log('1st login page popup');
         popupLogin--;
