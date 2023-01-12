@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Kalam&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@700&family=Quicksand:wght@500&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@1,700&family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@700&family=Quicksand:wght@500&family=Raleway&display=swap');
 
 * {
     /* background-color: red; */
@@ -54,7 +54,9 @@ li {
     --navLeftWidth: 18vw;
     --navRightWidth: 8vw;
 }
-
+body{
+    background-color:#F2DEBA;
+}
 @media screen and (max-width: 1500px )  {
     :root {
         --navMidWidth: auto;
@@ -71,7 +73,7 @@ li {
 }
 @media screen and (max-width: 740px) {
     body{
-        background-color: aquamarine;
+        background-color: #f2debae1;
     }
 }
 
@@ -111,7 +113,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(2 177 216 / 85%);
+    background-color: #3C79F5;
     height: 7vh;
     /* position: -webkit-sticky; Safari */
     position: sticky;
@@ -120,7 +122,7 @@ nav {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 nav li:hover {
-    background-color: rgba(56, 206, 240, 0.95);
+    background-color: #79a6ff;
     border-bottom: 3px solid rgb(37, 35, 82);
     border-radius: 5px; 
 }
@@ -128,22 +130,31 @@ nav li:hover {
 
 
 
-#firstSection, #secondSection{
-    background:  linear-gradient(rgba(0, 0, 0, 0.587),rgba(227, 220, 220, 0.649),rgba(0, 0, 0, 0.324)) ,url('../images/banner.jpg');
-    background-size:cover;
+#firstSection{
+    
+    
     padding:3vh;
 }
+.background{
+    background:  linear-gradient(rgba(22, 22, 22, 0.587),rgba(93, 93, 93, 0.649),rgba(0, 0, 0, 0.324)) ,url('../images/banner.jpg');
+    background-size: cover;
+    padding: 6vw;
+border-radius: 23px;
+}
 .heading{
-    font-size: 8vh;
+    
+    font-size: 3vw;
     color: rgb(255, 255, 255);
     text-align: center;
     font-family: poppins;
+
 }
 #wlcm{
-    font-size: 5vh;
+    font-size: 2vw;
     color: rgb(255, 255, 255);
     text-align: center;
     font-family: raleway;
+
 
 }
 .wsimg{
@@ -159,60 +170,195 @@ border-radius: 5px;;
 
 }
 #whyus{
-    background-color: rgb(255 255 236);
+    background-color: #2DCDDF;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 11vh 12vh;
+    margin: 1vw 1vw;
     flex-wrap: wrap;
     border-radius: 15px;
-    padding: 6vh 0vh;
-    color:black
+    padding: 0vh 0vh;
+    color: black;
+    /* height: 41vw; */
   }
 
 
 .whyusinfo{
     margin-left: 2vw;
-height: 13vh;
-
+    /* height: 6vw; */
 }
 .card{
-    padding: 2vh;
+    
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin: 0vh 2vw;
-    width: 80vw;
-    height: 17vh;
+    width: 87vw;
+    /* height: 9vw; */
     font-family: quicksand,sans-serif;
-    /* font-size: 2vh; */
-   
+    /* font-size: 2vh;*/
+    padding:2vw;
   }
   
-  footer{
-    height:4vh;
-    color:white;
-    background-color: rgb(0, 0, 86);
-    text-align: center;
-    padding: 4px 4px;
-    font-size:2.3vh;
-  }
-  .heading-sm
+  /*  */
+ .heading-sm
   {
-   
-    
-    font-family: raleway;
+    font-family: 'Philosopher', sans-serif;
     font-weight: 700;
-    font-size: 3.5vh;
-    padding-bottom: 1vh;
-    
+    font-size: 1.7vw;
+    margin: 1vw;
+   
   }
   .content{
-    font-size: 2.5vh;
+    font-size: 1.3vw;
 
   }
   
 
-.teacher{
- width:5vw;
+
+ 
+
+
+  /*////////////////////////////SecondSection//////////////////////////////////////////*/
+#secondSection{
+    margin: 2vw 2vw;
+    text-align: center;
+    padding: 2vw;
+    width: 92vw;
+    display: flex;
+    justify-content: center;
+}
+#teacher{
+    
+    display: flex;
+    width: 90vw;
+    /* height: 23vw; */
+    background-color: #6C00FF;
+    
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+    padding: 2vh 5vh;
+    color:rgb(255, 255, 223);
+    
+}
+#teacherimg{
+    height: 76%;
+    ;
+    margin: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#teacherimg img{
+    
+        width: 89%;
+        /* height: 55%; */
+        border-radius: 12px;
+    
+}
+#teachertxt{
+    font-size: 1rem;
+    margin-top: 4vw;
+    font-family: ubuntu,sans-serif;
+
+}
+#teachertxt span{
+    font-size: 1.9em;
+   
+    font-family: poppins,sans-serif;
+
+}
+.headingteacher{  font-size: 1.6em;
+}
+
+#subwhy{
+    text-align: center;
+        font-size: 2vw;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #3a008c;
+}
+.why{
+    font-size: 3vw;
+            font-family: playfair display;
+            margin-top: 5vh;
+            text-align: center;
+            color:#6C00FF;
+}
+@media screen and (max-width: 810px) {
+    .wsimg {
+        /*! max-width: 9vw; */
+       
+        width: 33vw;
+        max-width: fit-content;
+        margin: 3vw;
+    }
+    #whyus {
+        
+        height: auto;
+        padding: 2vw 0vw;
+    }
+    .card {
+       
+        margin: 2vh 4vw;
+        width: 90%;
+        height: auto;
+       
+        /* font-size: 2vh; */
+        flex-direction: column;
+       }
+       #whyusinfo{
+        height: auto;
+       }
+       .heading-sm {
+       padding: 2vw;
+        font-size: 1.4rem;
+    }
+    .content{
+        font-size: 16px;
+    }
+    #teacherimg img{
+        width: 100%;
+      
+    }
+    #teacher{
+        flex-direction: column;
+    }
+    .heading{
+        font-size: 5vw;;
+    }
+    #wlcm
+    {
+        font-size: 4vw;
+    }
+    #subwhy{
+        font-size: 3vw ;
+    }
+    .why{
+        font-size: 6vw;
+    }
+ 
+}
+
+
+
+@media screen and (max-width: 1018px) {
+    .heading-sm {
+        padding: 2vw;
+         font-size: 1.3rem;
+     }
+     .content{
+         font-size: 1rem;
+     }
+}
+
+
+footer{
+    height: 6vh;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 2vh 1vh;
+    font-size: 2vw;
+    margin-top: 3vh;
 }
