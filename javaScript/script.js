@@ -13,22 +13,21 @@ let popupLogin=1;
 const whyus = document.getElementById("whyusControl").innerHTML;
 bodySection2 = document.getElementById("whyusControl");
 const loginForm=`
-
-<div class="loginContainer">
+ <div class="loginContainer">
 <div class="loginHeading">
     <h1>Access Now</h1>
-    <span id="closeForm" onclick="displayLogin()">X</span>
+    <span id="closeForm" class="hoverPopout" onclick="displayLogin()">X</span>
 </div>
 
 <form class="myForm" action="/contact" method="post">
-    <input class="myInput" type="text" name="singIn" placeholder="User name or phone number">
+    <input class="myInput " type="text" name="singIn" placeholder="User name or phone number">
     <input class="myInput" type="password" name="password" placeholder="Enter your password">
-    <button class="btn">Sing in </button>
+    <button class="btn hoverPopout">Sing in </button>
 
     <input class="myInput" type="text" name="name" placeholder="Enter your name">
     <input class="myInput" type="number" name="age" placeholder="Enter your age">
     <input class="myInput" type="text" name="singUp" placeholder="Email or phone number">
-    <button class="btn">Sing up </button>
+    <button class="btn hoverPopout">Sing up </button>
 
 </form>
 <style>
@@ -48,34 +47,51 @@ const loginForm=`
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         background-color: rgb(255 255 255 / 78%);
-        outline:none;
+        outline: none;
+
     }
-    .loginHeading{
-        display: flex ;
+
+    .hoverPopout:hover {
+        cursor: pointer;
+        transform: scale(1.15);
+        border-radius: 20px;
+        /* box-shadow: 0 0 5px #42fbf2,
+            0 0 10px #42fbf2,
+            0 0 50px #42fbf2; */
+            transition: 300ms ease-in-out;
+    }
+
+    .loginHeading {
+        display: flex;
         position: relative;
         justify-content: center;
         align-items: center;
         font-family: 'Indie Flower', cursive;
         width: 45vw;
     }
-    #closeForm{
+
+    #closeForm {
         display: flex;
         font-size: 39px;
         position: absolute;
-        padding-right:1vw ;
+        padding-right: 1vw;
         top: 0;
         right: 0;
         font-weight: bold;
         cursor: pointer;
         /* background-color: antiquewhite; */
     }
-    #closeForm:hover{
-        color:rgb(202, 30, 32);
+
+    #closeForm:hover {
+        color: rgb(202, 30, 32);
     }
+
     .loginHeading h1 {
         font-size: 39px;
         align-items: center;
         justify-content: center;
+        padding: 1vh 0;
+        margin-top: 2vh;
         /* background-color: aquamarine; */
     }
 
@@ -110,7 +126,6 @@ const loginForm=`
     }
 </style>
 </div>
-
 `;
 function displayLogin() {
     // console.log('feyhr'+whyus)
@@ -134,7 +149,7 @@ function displayAbout() {
     } 
 }
 function displayLoginOnce(){
-    if (popupLogin) {
+    if (popupLogin && toggleBS2) {
         bodySection2.innerHTML = loginForm;
         console.log('1st login page popup');
         popupLogin--;
