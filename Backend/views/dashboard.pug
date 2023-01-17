@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Dashboard
+ 
+    style 
+      include  ../staticfolder/style.css
+  body
+    
+    
+   section#studentSection
+    .student
+      .dp
+        img(src='../static/dp.png' alt='dp' style='width:6vw;')
+      .infoContainer
+        .name #{Name} 
+        .studentInfo Email: #{Email}
+        .studentInfo Phone: #{Phone}
+        .studentInfo Age: #{Age}
+        .studentInfo Gender: #{Gender}
+        .studentInfo Birth Date: #{Birthday}
+        .studentInfo Address: #{Address}
