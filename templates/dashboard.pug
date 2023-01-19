@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Dashboard
+    style.
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@700&family=Quicksand:wght@500&family=Raleway&display=swap');
+      *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      }
+      #studentSection{
+      display: flex;
+      justify-content: center;
+      }
+      .student{
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(255, 233, 218);
+      justify-content: center;
+      align-items: center;
+      width: 50vw;
+      margin: 4vw 6vw;
+      padding: 5vw 4vw;
+      border-radius: 12px;
+      }
+      .name{
+      font-size: 3vw;
+      font-family: 'poppins', sans-serif;
+      }
+      .infoContainer{
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(255, 197, 155);
+      justify-content:left;
+      align-items: center;
+      padding: 2vw 1vw;
+      border-radius: 15px;
+      }
+      .studentInfo{
+      margin: 2vw 3vw;
+      width:40vw;
+      }
+  body
+    section#studentSection
+      .student
+        .dp
+          img(src='../static/dp.png', alt='dp', style='width:6vw;')
+        .infoContainer
+          .name Sushanta Das 
+          .studentInfo Email: susanta@gmail.com
+          .studentInfo Phone: 7047352759
+          .studentInfo Age: 20
+          .studentInfo Gender: male
+          .studentInfo Birth Date: 03/11/2002
+          .studentInfo Address: 1600 Amphitheatre Parkway Mountain View, CA 94043

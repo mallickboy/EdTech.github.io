@@ -20,15 +20,16 @@
             <span id="closeForm" class="hoverPopout" onclick="displayLogin()">X</span>
         </div>
 
-        <form class="myForm" action="/contact" method="post">
-            <input class="myInput " type="text" name="singIn" placeholder="User name or phone number">
-            <input class="myInput" type="password" name="password" placeholder="Enter your password">
-            <button class="btn hoverPopout">Sing in </button>
-
-            <input class="myInput" type="text" name="name" placeholder="Enter your name">
-            <input class="myInput" type="number" name="age" placeholder="Enter your age">
-            <input class="myInput" type="text" name="singUp" placeholder="Email or phone number">
-            <button class="btn hoverPopout">Sing up </button>
+        <form class="myForm" action="/courses" method="post">
+            <input class="myInput " type="email" name="clientEmail" placeholder="Enter your email">
+            <input class="myInput" type="password" name="clientPassword" placeholder="Enter your password">
+            <button class="btn hoverPopout" name="entry" value="1">Sing in </button>
+        </form>
+        <form class="myForm" action="/courses" method="post" id="createAccount">    
+            <input class="myInput" type="text" name="newUserName" placeholder="Enter your name">
+            <input class="myInput" type="number" name="newUserAge" placeholder="Enter your age">
+            <input class="myInput" id="phoneNo" type="email" name="newUserEmail" placeholder="Enter your valid email">
+            <button class="btn hoverPopout" name="entry" value="2">Sing up </button>
 
         </form>
         <style>
@@ -59,7 +60,7 @@
                 /* box-shadow: 0 0 5px #42fbf2,
                     0 0 10px #42fbf2,
                     0 0 50px #42fbf2; */
-                    transition: 300ms ease-in-out;
+                transition: 300ms ease-in-out;
             }
 
             .loginHeading {
@@ -127,6 +128,8 @@
             }
         </style>
     </div>
+
+    
 </body>
 
 </html>

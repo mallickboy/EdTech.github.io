@@ -137,7 +137,7 @@ nav li:hover {
     padding:3vh;
 }
 .background{
-    background:  linear-gradient(rgba(22, 22, 22, 0.587),rgba(93, 93, 93, 0.649),rgba(0, 0, 0, 0.324)) ,url('../images/banner.jpg');
+    background:  linear-gradient(rgba(22, 22, 22, 0.587),rgba(93, 93, 93, 0.649),rgba(0, 0, 0, 0.324)) ,url('../static/images/bannerBackground.jpg');
     background-size: cover;
     padding: 6vw;
 border-radius: 23px;
