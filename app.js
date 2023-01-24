@@ -28,7 +28,7 @@ app.use('/servingItems',express.static('servingItems'));
 const home=fs.readFileSync('./templates/index.html');
 
 // set the template engine as pug
-app.set("view engine",'pug');
+app.set("view engine",'hbs');
 
 // set the views directory
 app.set('views',path.join(__dirname,'templates'))   
@@ -49,7 +49,7 @@ let usersVerification=[]// initially empty
 // Collecting data at post request
 app.post("/courses", function(req, res) {
     const user=req.body;
-    
+    console.log("user",user);
     // console.log(user.clientEmail )
       
     // res.send("Addition - " + user);
@@ -103,7 +103,7 @@ app.post("/courses", function(req, res) {
             // console.log("Hurrreeeee");
             // app.set('views',path.join(__dirname,'servingItems/Dashboard/template'))   
 
-            res.status(200).render('dashboard') ;   
+            res.status(200).render('dashboard2') ;   
         } else {
             res.status(404).render('otpVerify',{email:user.verifyEmail, round:`Retry`})
         }
