@@ -27,7 +27,7 @@ const contactSchema = new mongoose.Schema({
     time: String
 });
 const Contact = mongoose.model('edTechprofile', contactSchema);
-const port = 8001;
+const port = 3000;
 
 const nodemailer = require('nodemailer'); // adding mail service
 const { exit } = require('process');
