@@ -96,13 +96,13 @@ app.post("/courses", function (req, res) {
         };
         // sending OTP through email :
 
-         transporter.sendMail(mailOptions, function(error, info){
-             if (error) {
-                 console.log(error);
-             } else {
-                 console.log('Email sent: ' + info.response);
-            }
-         });
+        // transporter.sendMail(mailOptions, function(error, info){
+        //     if (error) {
+        //         console.log(error);
+        //     } else {
+        //         console.log('Email sent: ' + info.response);
+        //     }
+        // });
 
         // storing data in temp dictionery
         usersVerification.push({
