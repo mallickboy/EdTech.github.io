@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +64,8 @@
 
             <div class="component" id="studentProfile">
                 <div class="student">
-                    <div class="dp"><img src="../servingItems/static/images/dp.jpeg" alt="dp" style="width:9vw;" /></div>
+                    <div class="dp"><img src="../servingItems/static/images/dp.jpeg" alt="dp" style="width:9vw;" />
+                    </div>
                     <div class="infoContainer">
                         <div class="name">{{username}} </div>
                         <div class="studentInfo">Email: {{useremail}}</div>
@@ -107,6 +107,11 @@
                             This is all you need to get seat in Top IITs
 
                         </div>
+                    </div>
+                    <div class="videoFrame">
+                        <h2>Video</h2> <video id="videoPlayer" controls>
+                            <source src="/video" ,type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>

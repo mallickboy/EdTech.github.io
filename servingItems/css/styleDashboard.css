@@ -169,7 +169,19 @@ aside {
     transition: all 400ms ease-out;
 }
 
-
+#videoPlayer{
+    width:90%;
+}
+.videoFrame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(122, 0, 108);
+    border-radius: 5px;
+    width: 34vw;
+    padding: 1vw 1vw;
+}
 /*//////////////////////// Student Profile /////////////////////////*/
 
 

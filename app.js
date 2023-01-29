@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 // Connecting to mongodb server
 main().catch(err => console.log(err));
 async function main() {
-    await mongoose.connect('mongodb://128.199.88.139:27017/edTech');
+    await mongoose.connect('mongodb://localhost:27017/edTech');
 }
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -49,7 +49,7 @@ app.use('/servingItems', express.static('servingItems'));
 const home = fs.readFileSync('./templates/index.html');
 
 // set the template engine as pug
-app.set("view engine", 'pug');
+app.set("view engine", 'hbs');
 
 // set the views directory
 app.set('views', path.join(__dirname, 'templates'))
@@ -58,6 +58,32 @@ app.set('views', path.join(__dirname, 'templates'))
 app.get('/', (req, res) => {
     res.status(200).end(home);
 })
+
+//Video Streaming
+app.get('/video', function(req, res){
+    const range = req.headers.range;
+    if(!range){
+        res.status(400).send("Requires Range header");
+    }
+    const videoPath = "./servingItems/static/Video/earth.mp4";
+    const videoSize = fs.statSync(videoPath).size;
+   
+    const CHUNK_SIZE = 10**6; //1 MB
+    const start = Number(range.replace(/\D/g, "")); 
+    const end = Math.min(start + CHUNK_SIZE , videoSize-1);
+    const contentLength = end-start+1;
+    const headers = {
+        "Content-Range": `bytes ${start}-${end}/${videoSize}`,
+        "Accept-Ranges": 'bytes',
+        "Content-Length": contentLength,
+        "Content-Type": "video/mp4"
+    }
+    res.writeHead(206,headers);
+    const videoStream = fs.createReadStream(videoPath,{start, end});
+    videoStream.pipe(res);
+
+})
+
 // Serving page on get request
 app.get('/courses', (req, res) => {
     res.status(200).end(fs.readFileSync('./templates/login.html'))
@@ -117,10 +143,7 @@ app.post("/courses", function (req, res) {
 
         // res.send("New user \n Email : " + user.newUserEmail+"\n Name : "+user.newUserName+"\n Age : "+user.newUserAge);
         // set the template engine as pug
-        app.set("view engine", 'pug');
-
-        // set the views directory
-        app.set('views', path.join(__dirname, 'templates'))
+    
         res.status(200).render('otpVerify', { email: user.newUserEmail })
     } else if (user.entry == 1) {// Case 2 : Existing User Sing in // value of entry = 1
 
