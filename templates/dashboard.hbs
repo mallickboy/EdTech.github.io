@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="../servingItems/css/styleDashboard.css">
+
+</head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="icon"><span class="material-symbols-rounded">
+                        school
+                    </span></div>
+                <div class="company"><span id="Re">Re</span>learn</div>
+
+            </div>
+            <div id="profile" class="menu-item" data-opt="studentProfile">
+                <div class="profileIcon"><img src="../servingItems/static/images/dp.jpeg" alt="dp"></div>
+                <div class="profileName">{{username}}</div>
+            </div>
+            <div class="sidebar">
+                <div class="menu menu-item" data-opt="courses">
+                    <div class="icon"><span class="material-symbols-rounded">
+                            menu_book
+                        </span></div>
+                    <div class="menutext" data-opt="courses">Courses</div>
+                </div>
+                <div class="menu menu-item" data-opt="tests">
+                    <div class="icon"><span class="material-symbols-rounded">
+                            history_edu
+                        </span></div>
+                    <div class="menutext" data-opt="tests">Online Test</div>
+                </div>
+                <div class="menu menu-item" data-opt="performances">
+                    <div class="icon"><span class="material-symbols-rounded">
+                            monitoring
+                        </span></div>
+                    <div class="menutext" data-opt="performances">Performance</div>
+                </div>
+                <div class="menu menu-item" data-opt="quizes">
+                    <div class="icon"><span class="material-symbols-rounded">
+                            quiz
+                        </span></div>
+                    <div class="menutext" data-opt="quizes">Quiz</div>
+                </div>
+                <div class="menu menu-item logout" data-opt="Logout">
+                    <div class="icon"><span class="material-symbols-rounded">
+                            logout
+                        </span></div>
+                    <div class="menutext" data-opt="Logout">Log Out</div>
+                </div>
+            </div>
+        </aside>
+        <section id="RightSection">
+
+            <div class="component" id="studentProfile">
+                <div class="student">
+                    <div class="dp"><img src="../servingItems/static/images/dp.jpeg" alt="dp" style="width:9vw;" />
+                    </div>
+                    <div class="infoContainer">
+                        <div class="name">{{username}} </div>
+                        <div class="studentInfo">Email: {{useremail}}</div>
+                        <div class="studentInfo">Phone: 7047352759</div>
+                        <div class="studentInfo">Age: {{userage}}</div>
+                        <div class="studentInfo">Gender: male</div>
+                        <div class="studentInfo">Birth Date: 03/11/2002</div>
+                        <div class="studentInfo">Address: 1600 Amphitheatre Parkway Mountain View, CA 94043</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="component" id="courses">
+                <div class="courseCard">
+                    <div class="course">
+                        <div class="title">IITJEE</div>
+                        <div class="desc">Crack IITJEE In One Year Course.<br>
+                            This is all you need to get seat in Top IITs
+
+                        </div>
+                    </div>
+                    <div class="course">
+                        <div class="title">JEE Main</div>
+                        <div class="desc">Crack JEE Main In One Year Course.<br>
+                            This is all you need to get seat in Top NITs
+
+                        </div>
+                    </div>
+                    <div class="course">
+                        <div class="title">NEET</div>
+                        <div class="desc">Crack NEET In One Year Course.<br>
+                            This is all you need to get seat in Top Medical Institutes
+
+                        </div>
+                    </div>
+                    <div class="course">
+                        <div class="title">GATE</div>
+                        <div class="desc">Crack GATE In One Year Course.<br>
+                            This is all you need to get seat in Top IITs
+
+                        </div>
+                    </div>
+                    <div class="videoFrame">
+                        <h2>Video</h2> <video id="videoPlayer" controls>
+                            <source src="/video" ,type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="component" id="quizes">
+
+                <div class="quiz course">
+                    <div class="title">Quizes</div>
+                    <div class="desc">a short test of knowledge<br>This Quiz contains 10 MCQ Questions</div>
+                </div>
+            </div>
+            <div class="component" id="tests">
+
+                <div class="test course">
+                    <div class="title">IITJEE </div>
+                    <div class="desc">Test Your Problem Solving Skills<br>This Section Contains 2 papers of 120 marks
+                        each .<br>Time : 3hr each paper</div>
+                </div>
+                <div class="test course">
+                    <div class="title">JEE Main </div>
+                    <div class="desc">Test Your Problem Solving Skills<br>This Section Contains 1 papers of 300
+                        marks<br>Time : 3hr</div>
+                </div>
+            </div>
+            <div class="component " id="performances">
+
+                <div class="performance course">
+                    <div class="title">Performance </div>
+                    <div class="desc">
+                        <div id="myChart" style="width:100%; max-width:40vw; "></div>
+
+                        <!-- ################################# Performance Chart #######################-->
+                        <script>
+
+                            google.charts.load('current', { packages: ['corechart'] });
+                            google.charts.setOnLoadCallback(drawChart);
+
+                            function drawChart() {
+                                // Set Data
+                                var data = google.visualization.arrayToDataTable([
+                                    ['Price', 'Size'],
+                                    [50, 7], [60, 8], [70, 8], [80, 9], [90, 9],
+                                    [100, 9], [110, 10], [120, 11],
+                                    [130, 14], [140, 14], [150, 15]
+                                ]);
+                                // Set Options
+                                var options = {
+                                    title: 'Total Time Spent vs. Days',
+                                    hAxis: { title: 'Days' },
+                                    vAxis: { title: 'Time Spent' },
+                                    legend: 'none'
+                                };
+                                // Draw
+                                var chart = new google.visualization.LineChart(document.getElementById('myChart'));
+                                chart.draw(data, options);
+                            }
+                        </script>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <script src="../servingItems/javaScript/scriptDashboard.js"></script>
+</body>
+
+</html>

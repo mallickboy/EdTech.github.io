@@ -6,28 +6,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./static/logo/icon.png">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title>ReLearn</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./javaScript/script.js"></script>
+    <link rel="stylesheet" href="../servingItems/css/style.css">
+
 </head>
 
 <body>
     <nav>
         <ul class="left">
-            <li><a href="#"><img src="./static/logo/icon.png" alt="LR" class="icon"></a></li>
-            <li><a href="#whyus" onclick="displayAbout()">About</a></li>
-            <li><a href="./login.html">Courses</a></li>
-        </ul>
-        <ul class="searchBox">
-            <input type="text" placeholder="Search here">
-            <li><img src="./static/logo/search" alt="Search" class="icon"></li>
+            <li><a href="#">
+                    <div class="top">
+                        <div class="icon"><span class="material-symbols-rounded">
+                                school
+                            </span></div>
+                        <div class="company"><span id="Re">Re</span>learn</div>
+
+                    </div>
+                </a></li>
+            <div class="mobileView"><a href="./courses">Courses</a>
+                <div class="loginportion"> <button onclick="displayLogin()" class="login-sm">
+                            Login</button></li>
+                </div>
+                <div class="menubar"> <span class="material-symbols-rounded menu">
+                        menu
+                    </span></div>
+            </div>
+
         </ul>
         <ul class="right">
-            <li><img src="./static/logo/call.png" alt="9876543210" id="copyPn" onclick="copyPn()" class="icon"></li>
-            <li onclick="displayLogin()"><a href="#whyus"> Login</a></li>
+            <div class="leftlink"><a href="#whyus" onclick="displayAbout()">About</a>
+                <a href="./courses">Courses</a>
+            </div>
+            <div class="rightElm">
+                <div class="searchBox">
+                    <input type="text" placeholder="Search here">
+                    <div><span class="material-symbols-rounded search">
+                            search
+                        </span></div>
+                </div>
+
+                <!-- <li><img src="../servingItems/static/logo/call.png" alt="Phone no" id="copyPn" onclick="copyPn()" class="phIcon"></li> -->
+                <div class="loginportion"><button onclick="displayLogin()" class="login">
+                            Login</button></li>
+                </div>
+            </div>
         </ul>
     </nav>
-
+    <div class="leftlinkMobile">
+        <div class="searchBox">
+            <input type="text" placeholder="Search here">
+            <div><span class="material-symbols-rounded search">
+                    search
+                </span></div>
+        </div>
+        <div><a href="#whyus" onclick="displayAbout()">About</a></div>
+        <div><a href="./courses">Courses</a></div>
+        <div> <a href="./contact">Contact us</a></div>
+    </div>
+    <div id="whyusControl" style="position: fixed;top: 5vh;height: 0;display: flex;
+    justify-content: center;
+    width: 100%;"></div>
     <section id="firstSection">
         <div class="background">
             <div class="heading">For every student,<br>
@@ -38,17 +78,17 @@
                 the courses we provide to select the one best for you.</div>
         </div>
 
-        <div class="why">Why iEducate ?</div>
+        <div class="why">Why Relearn ?</div>
         <div id="subwhy">Your One Stop
             Destination For Success</div>
-            <div id="whyus">
-                
-                <div id="whyusControl" style="position: sticky;top: 15vh;height: 0;"></div>
+        <div id="whyus">
+
+           
             <div class="card">
-                <div class="wsimg"><img src="images/banner.jpg" alt=""></div>
+                <div class="wsimg"><img src="./servingItems/static/images/bannerBackground.jpg" alt=""></div>
                 <div class="whyusinfo">
                     <div class="heading-sm">Live / Scheduled Lectures</div>
-                    
+
                     <div class="content"> Learning is an important step for achieving dreams in a student's journey. We
                         encourage the student
                         to explore the concept in depth instead of memorizing. The live lectures help us in learning the
@@ -58,17 +98,17 @@
             </div>
 
             <div class="card">
-                <div class="wsimg"><img src="images/banner.jpg" alt=""></div>
+                <div class="wsimg"><img src="./servingItems/static/images/bannerBackground.jpg" alt=""></div>
                 <div class="whyusinfo">
                     <div class="heading-sm">Live Doubt Solving Sessions</div>
-                    <div class="content">At iEducate we always encourage students to ask questions. We have created an
+                    <div class="content">At Relearn we always encourage students to ask questions. We have created an
                         atmosphere where students don't hesitate to ask their doubts. We firmly believe in More you ask,
                         the more you learn.
                     </div>
                 </div>
             </div>
             <div class="card">
-                <div class="wsimg"><img src="images/banner.jpg" alt=""></div>
+                <div class="wsimg"><img src="./servingItems/static/images/bannerBackground.jpg" alt=""></div>
                 <div class="whyusinfo">
                     <div class="heading-sm">Structured And Targeted Study Material</div>
                     <div class="content"> Explore the art of concept with our structured material with intelligent
@@ -77,7 +117,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="wsimg"><img src="images/banner.jpg" alt=""></div>
+                <div class="wsimg"><img src="./servingItems/static/images/bannerBackground.jpg" alt=""></div>
                 <div class="whyusinfo">
                     <div class="heading-sm">Tests On Regular Basis For Progress Tracking</div>
                     <div class="content"> It is a set of test papers designed to make the student comfortable with all
@@ -95,19 +135,20 @@
 
         <div id="teacher">
 
-            <div id="teacherimg"><img src="images/teacher.jpg" alt="teacher image"></div>
+            <div id="teacherimg"><img src="./servingItems/static/images/teacher.jpg" alt="teacher image"></div>
             <div id="teachertxt">
                 <div id="teacherheading2"><span>TEACHERS</span></div>
 
                 <div class="headingteacher"> “I'm finally able to truly differentiate my classroom. This has been
                     priceless for my students' engagement.”</div> <br>
                 <div class="">We empower teachers to support their entire classroom. 90% of teachers who have used
-                    iEducate
+                    Relearn
                     have found us effective.</div>
             </div>
         </div>
     </div>
-    <footer>copyright &copy; iEducate . All rights reserved.</footer>
+    <footer>copyright &copy; Relearn . All rights reserved.</footer>
+    <script src="../servingItems/javaScript/script.js"></script>
 </body>
 
 </html>
