@@ -1,4 +1,4 @@
 # Dashboard
 
-Install dependencies : go inside Dashboard folder and run  npm i 
-run webpage : ```npm run dev```
+Install dependencies : go inside Dashboard folder and run this commmand  ```npm i```<br/>
+ then Run webpage : ```npm run dev```
