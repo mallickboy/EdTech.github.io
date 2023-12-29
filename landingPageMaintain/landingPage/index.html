@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./static/logo/icon.png">
+    <title>ReLearn</title>
+    <link rel="stylesheet" href="../servingItems/css/style.css">
+    <script defer src="../servingItems/javaScript/script.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul class="left">
+            <li><a href="#"><img src="../servingItems/static/logo/icon.png" alt="LR" class="icon"></a></li>
+            <li><a href="#whyus" onclick="displayAbout()">About</a></li>
+            <li><a href="./courses">Courses</a></li>
+        </ul>
+        <ul class="searchBox">
+            <input type="text" placeholder="Search here">
+            <li><img src="../servingItems/static/logo/search" alt="Search" class="icon"></li>
+        </ul>
+        <ul class="right">
+            <li><img src="../servingItems/static/logo/call.png" alt="Phone no" id="copyPn" onclick="copyPn()" class="icon"></li>
+            <li onclick="displayLogin()"><a href="#whyus"> Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="firstSection">
+        <div class="background">
+            <div class="heading">For every student,<br>
+                every classroom.<br>
+                Real results.</div>
+            <div id="wlcm">We welcome the online student to our website with good offers.<br> Do have a thorough look
+                into
+                the courses we provide to select the one best for you.</div>
+        </div>
+
+        <div class="why">Why iEducate ?</div>
+        <div id="subwhy">Your One Stop
+            Destination For Success</div>
+            <div id="whyus">
+                
+                <div id="whyusControl" style="position: sticky;top: 15vh;height: 0;"></div>
+            <div class="card">
+                <div class="wsimg"><img src="./servingItems/static/images/bannerBackground.jpg" alt=""></div>
+                <div class="whyusinfo">
+                    <div class="heading-sm">Live / Scheduled Lectures</div>
+                    
+                    <div class="content"> Learning is an important step for achieving dreams in a student's journey. We
+                        encourage the student
+                        to explore the concept in depth instead of memorizing. The live lectures help us in learning the
+                        needs of the students and motivates the students to be creative and be passionate learners.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="wsimg"><img src="./servingItems/static/images/bannerBackground.jpg" alt=""></div>
+                <div class="whyusinfo">
+                    <div class="heading-sm">Live Doubt Solving Sessions</div>
+                    <div class="content">At iEducate we always encourage students to ask questions. We have created an
+                        atmosphere where students don't hesitate to ask their doubts. We firmly believe in More you ask,
+                        the more you learn.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="wsimg"><img src="./servingItems/static/images/bannerBackground.jpg" alt=""></div>
+                <div class="whyusinfo">
+                    <div class="heading-sm">Structured And Targeted Study Material</div>
+                    <div class="content"> Explore the art of concept with our structured material with intelligent
+                        question tackling and problem solving skills.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="wsimg"><img src="./servingItems/static/images/bannerBackground.jpg" alt=""></div>
+                <div class="whyusinfo">
+                    <div class="heading-sm">Tests On Regular Basis For Progress Tracking</div>
+                    <div class="content"> It is a set of test papers designed to make the student comfortable with all
+                        possible varieties of questions along with the various ways in which the same question can be
+                        put in order to make the student sweat in the exam hall.The problems involve multi-dimensional
+                        thinking at a time.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <div id="secondSection" onmouseleave="displayLoginOnce()">
+
+        <div id="teacher">
+
+            <div id="teacherimg"><img src="./servingItems/static/images/teacher.jpg" alt="teacher image"></div>
+            <div id="teachertxt">
+                <div id="teacherheading2"><span>TEACHERS</span></div>
+
+                <div class="headingteacher"> “I'm finally able to truly differentiate my classroom. This has been
+                    priceless for my students' engagement.”</div> <br>
+                <div class="">We empower teachers to support their entire classroom. 90% of teachers who have used
+                    iEducate
+                    have found us effective.</div>
+            </div>
+        </div>
+    </div>
+    <footer>copyright &copy; iEducate . All rights reserved.</footer>
+</body>
+
+</html>
