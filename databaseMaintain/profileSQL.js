@@ -1,14 +1,26 @@
+// const mysql = require('mysql2');
+// const {pool} =require("./dbPool")
+
 const mysql = require('mysql2');
+
 const dotenv = require('dotenv');
 dotenv.config()
+const pool = mysql.createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+}).promise();
 
-const pool=mysql.createPool({
-    host:process.env.MYSQL_HOST,
-    user:process.env.MYSQL_USER,
-    password:process.env.MYSQL_PASSWORD,
-    database:process.env.MYSQL_DATABASE
 
-}).promise()
+
+// const pool=mysql.createPool({
+//     host:process.env.MYSQL_HOST,
+//     user:process.env.MYSQL_USER,
+//     password:process.env.MYSQL_PASSWORD,
+//     database:process.env.MYSQL_DATABASE
+
+// }).promise()
 async function getNote(id) {
     const [rows]=await pool.query(`
     SELECT *
@@ -51,5 +63,5 @@ function testing(params) {
 //     console.log(a);
 // }
 // get()
-module.exports = { getNote,getNotes, createNote,testing,login };
+module.exports = { getNote,getNotes, createNote,testing,login ,pool };
 

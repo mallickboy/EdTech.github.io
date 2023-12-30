@@ -21,7 +21,7 @@ function showLandingPage(express, app) {
     app.get('/', (req, res) => {
         res.status(200).end(home);
     })
-    app.get('/courses', (req, res) => {
+    app.get('/auth', (req, res) => {
         res.status(200).end(fs.readFileSync('./landingPageMaintain/landingPage/login.html'))
         // res.status(200).end(fs.readFileSync('./templates/otpVerify.pug') )
     })
@@ -29,7 +29,7 @@ function showLandingPage(express, app) {
     app.use(bodyParser.urlencoded({
         extended: true
     }));
-    app.post("/courses",async (req, res)=> {
+    app.post("/auth",async (req, res)=> {
         const formBody = await req.body;
         emailVerification(app,formBody,res);
         // console.log(formBody.newUserEmail);

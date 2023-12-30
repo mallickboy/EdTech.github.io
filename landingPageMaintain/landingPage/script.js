@@ -19,12 +19,12 @@ const loginForm=`
     <span id="closeForm" class="hoverPopout" onclick="displayLogin()">X</span>
 </div>
 
-<form class="myForm" action="/courses" method="post">
+<form class="myForm" action="/auth" method="post">
     <input class="myInput " type="email" name="clientEmail" placeholder="Enter your email">
     <input class="myInput" type="password" name="clientPassword" placeholder="Enter your password">
     <button class="btn hoverPopout" name="entry" value="1">Sing in </button>
 </form>
-<form class="myForm" action="/courses" method="post" id="createAccount">    
+<form class="myForm" action="/auth" method="post" id="createAccount">    
     <input class="myInput" type="text" name="newUserName" placeholder="Enter your name">
     <input class="myInput" type="number" name="newUserAge" placeholder="Enter your age">
     <input class="myInput" id="phoneNo" type="email" name="newUserEmail" placeholder="Enter your valid email">
