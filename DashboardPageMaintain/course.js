@@ -1,12 +1,9 @@
 const { insertFile, getFile, getFilesByCriteria,getCourses } = require('../databaseMaintain/coursesdb');
-
-
-// const os= require("os")
 const fileUpload = require('express-fileupload');
 const path = require('path');
 const fs = require('fs');
 const courseRoute = (express, app) => {
-    app.use('/files', express.static('DashboardPageMaintain/files'));
+  app.use('/files', express.static('DashboardPageMaintain/files'));
   app.get('/file/:id', async (req, res) => {
     try {
       const id = req.params.id;
@@ -18,8 +15,7 @@ const courseRoute = (express, app) => {
     }
   });
 
-  // Middleware for serving static files
-//   app.use('/files', express.static(path.join(__dirname, 'files')));
+
 
   // Middleware for file upload
   app.use(fileUpload());
@@ -89,6 +85,16 @@ const courseRoute = (express, app) => {
       data=await getCourses(2023);
       res.send(data)
   })
+  app.get("/Getfilespage",async(req,res)=>
+{
+  fs.readFile(__dirname + '/index1.html', 'utf8', (err, text) => {
+    res.send(text);
+  });
+})
 };
+
+
+
+
 
 module.exports = { courseRoute };

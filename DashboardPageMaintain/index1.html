@@ -60,7 +60,7 @@
 
     function displayFileLinks(fileLinks) {
       const resultDiv = document.getElementById('result');
-      resultDiv.innerHTML = `<h3>File Links:</h3>${fileLinks.map(link => `<p>${link}</p>`).join('')}`;
+      resultDiv.innerHTML = `<h3>File Links:</h3>${fileLinks.map(link => `<p>http://localhost:8080/files/${link}</p>`).join('')}`;
     }
 
     function displayErrorMessage(message) {

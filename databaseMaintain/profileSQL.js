@@ -21,6 +21,10 @@ const pool = mysql.createPool({
 //     database:process.env.MYSQL_DATABASE
 
 // }).promise()
+
+
+
+
 async function getNote(id) {
     const [rows]=await pool.query(`
     SELECT *

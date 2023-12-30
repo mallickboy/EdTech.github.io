@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@700&family=Quicksand:wght@500&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*================== Side Bar =============================*/
+.top {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    color: rgb(56, 56, 56);
+}
+
+.company {
+    font-family: poppins, sans-serif;
+    font-size: 1.7rem;
+    ;
+}
+
+#Re {
+    color: rgb(255, 106, 0);
+}
+
+#profile {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    align-items: center;
+    padding: 7px 6px;
+}
+
+#profile:hover {
+    transform: scale(1.1);
+   cursor: pointer;
+    transition: all 400ms ease-in-out;
+}
+
+.profileIcon img {
+    width: 3rem;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.profileIcon {
+    pointer-events: none;
+}
+
+#profile:active {
+    box-shadow: 0px 0px 11px 5px rgb(0, 120, 232);
+    
+
+
+}
+a{
+    text-decoration: none;
+    color: rgb(69, 69, 69);
+}
+
+.profileName {
+    font-family: quicksand, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-family: quicksand, Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+padding: 5px 14px;
+}
+
+.material-symbols-rounded {
+    color: rgb(124, 124, 124);
+}
+
+.menu:hover {
+    color: rgb(0, 120, 232);
+    transform: scale(1.1);
+    transition: all 400ms ease-out;
+    cursor: pointer;
+}
+.menu-item.active{
+    color:rgb(255, 255, 255);
+    background-color: #0075db;
+    transition: all 400ms ease-out;
+}
+.material-symbols-rounded.active{
+    color:rgb(255, 255, 255);
+
+    transition: all 400ms ease-out;
+
+}
+.logout{margin-top:7vh;}
+
+aside {
+    margin: 1vw 3vw;
+    width: 18vw;
+    height:95vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 19px;
+    padding: 3vw 2vw;
+    display: inline-block;
+    box-shadow: 5px 5px 16px -2px rgb(4, 13, 0);
+
+}
+
+.container {
+    display: flex;
+   
+}
+
+
+/*================== Courses =============================*/
+.courseCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 64vw;
+}
+
+.course {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2vw 2vw;
+    margin: 2vw 2vw;
+    background: linear-gradient(151deg, rgb(255, 0, 251), rgb(67, 0, 134));
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 2vw;
+    box-shadow: 5px 5px 16px -2px rgb(4, 13, 0);
+    color: white;
+
+}
+
+.course:hover {
+    transform: scale(1.1);
+    transition: all 400ms ease-in-out;
+}
+
+.course .title {
+    font-family: poppins, sans-serif;
+    font-size: 1.3rem;
+}
+
+.course .desc {
+    font-family: quicksand, sans-serif;
+}
+
+.component {
+    /* display: none; */
+}
+
+.component.active {
+    display: flex;
+    margin:2.2vw 0vw;
+    transition: all 400ms ease-out;
+}
+
+#videoPlayer{
+    width:90%;
+}
+.videoFrame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(122, 0, 108);
+    border-radius: 5px;
+    width: 34vw;
+    padding: 1vw 1vw;
+}
+/*//////////////////////// Student Profile /////////////////////////*/
+
+
+#RightSection {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 1vw 0vw;
+
+
+}
+
+.student {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(224, 240, 255);
+    justify-content: flex-start;
+    align-items: center;
+    width: 50vw;
+   
+    margin: 2.2vw 3vw;
+    padding: 5vw 4vw;
+    border-radius: 12px;
+    box-shadow: 5px 5px 16px -2px rgb(4, 13, 0);
+}
+
+.name {
+    font-size: 3vw;
+    font-family: 'poppins', sans-serif;
+}
+
+.infoContainer {
+    color: white;
+    font-family: quicksand, Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 117, 219);
+    justify-content: left;
+    align-items: center;
+    padding: 2vw 1vw;
+    border-radius: 15px;
+}
+
+.studentInfo {
+    margin: 1vw 3vw;
+    width: 40vw;
+}
+
+.dp {
+    margin: 1vw 8vw;
+    width: 10vw;
+    padding: 4px 3px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.dp img {
+    width: 96%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2px #f1f4f7, 0px 0px 0px 3px #0075db;
+}
