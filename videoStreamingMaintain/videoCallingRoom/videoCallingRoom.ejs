@@ -28,13 +28,18 @@
 
         video {
             width: 100%;
-            height: 100%;
+            height: 80%;
             object-fit: fill;
+            border: 1px solid red;
         }
-        user-name{
+        label{
             text-align: center;
             /* display: none; */
             color: brown;
+            size: 50px;
+        }
+        videoSec{
+            border: 1px solid black;
         }
     </style>
 </head>
@@ -52,7 +57,7 @@
         socket.emit('join-room', ROOM_ID, id);
     })
     const myVideo = document.createElement('video');
-    const myName = document.createElement('user-name');
+    const myName = document.createElement('label');
     myVideo.muted = true;
     const allpeers={}
     navigator.mediaDevices.getUserMedia({
@@ -63,7 +68,7 @@
         peer.on('call',call=>{
             call.answer(stream);
             const videoADD=document.createElement('video');
-            const myName = document.createElement('user-name');
+            const myName = document.createElement('label');
             call.on('stream',userVideoStream=>{
                 addVideoStream(myName,videoADD,userVideoStream);
             })
@@ -84,7 +89,7 @@
     function connectToNewUser(userId,stream) {
         const call=peer.call(userId,stream);
         const video=document.createElement('video');
-        const myName = document.createElement('user-name');
+        const myName = document.createElement('label');
         call.on('stream',userVideoStream=>{
             addVideoStream(myName,video,userVideoStream);
         })
@@ -96,11 +101,23 @@
 
     function addVideoStream(profile,video, stream) {
         video.srcObject = stream;
+        console.log(stream.id)
+        const videoSec=document.createElement('videoSec');
+        const camera=document.createElement('camera');
+        camera.textContent="camera";
+        camera.onclick=()=>{
+            alert("camera clicked");
+            
+        }
+        const mic=document.createElement('mic');
+        mic.textContent="mic"
         video.addEventListener('loadedmetadata', () => {
             video.play();
         })
         profile.textContent="User_name";
-        videoGrid.append(profile,video);
+        // video.append(profile)
+        videoSec.append(video,profile,camera,mic)
+        videoGrid.append(videoSec);
     }
 </script>
 
