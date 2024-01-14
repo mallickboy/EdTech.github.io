@@ -97,35 +97,70 @@ async function  videoOverview(course_name,subject,chapter) {
         } catch (error) {
             return "videoOverview course,subject,chapter ERROR"
         }
-    } else if (subject) {
-        // console.log(subject)
-        try {
-            const [result]=await pool.query(get_video_overview+
-                `WHERE cc.course_name = ? 
-                AND cs.subject_name = ?;`,[course_name,subject])
-            return result
-        } catch (error) {
-            return "videoOverview course,subject ERROR"
-        }
-    }else if (course_name) {
-        // console.log(course_name)
-        try {
-            const [result]=await pool.query(get_video_overview+`WHERE cc.course_name = ?;`,[course_name])
-            return result
-        } catch (error) {
-            return "videoOverview course ERROR"
-        }
     }
-    else{
-        try {
-            const [result]=await pool.query(get_video_overview+`;`)
-            return result
-        } catch (error) {
-            return "videoOverview ERROR"
-        }
-    }
+    //  else if (subject) {
+    //     // console.log(subject)
+    //     try {
+    //         const [result]=await pool.query(get_video_overview+
+    //             `WHERE cc.course_name = ? 
+    //             AND cs.subject_name = ?;`,[course_name,subject])
+    //         return result
+    //     } catch (error) {
+    //         return "videoOverview course,subject ERROR"
+    //     }
+    // }else if (course_name) {
+    //     // console.log(course_name)
+    //     try {
+    //         const [result]=await pool.query(get_video_overview+`WHERE cc.course_name = ?;`,[course_name])
+    //         return result
+    //     } catch (error) {
+    //         return "videoOverview course ERROR"
+    //     }
+    // }
+    // else{
+    //     try {
+    //         const [result]=await pool.query(`select cc.course_name
+    //         from edtech.current_courses as cc;`)
+    //         return result
+    //     } catch (error) {
+    //         return "videoOverview ERROR"
+    //     }
+    // }
     
 }
-
-module.exports = { getNote,getNotes, createNote,testing,login ,pool,videoOverview,VideoUserAcess };
+async function overview_courses(){
+    try {
+        const [result]=await pool.query(`select cc.course_name
+        from edtech.current_courses as cc;`)
+        return result.map(item => item.course_name)
+    } catch (error) {
+        return "overview_courses ERROR"
+    }
+}
+async function overview_subject(course_name){
+    try {
+        const [result]=await pool.query(`select cs.subject_name
+        from edtech.current_courses as cc
+        inner join edtech.current_subjects as cs on cc.course_id=cs.course_id
+        where cc.course_name = ?;`,[course_name])
+        return result.map(item => item.subject_name)
+    } catch (error) {
+        return "overview_subject ERROR"
+    }
+}
+async function overview_chapter(course_name,subject_name){ // need to be changed wrt frontend to load balance
+    try {
+        const [result]=await pool.query(`select cv.video_chapter
+        from edtech.current_courses as cc
+        inner join edtech.current_subjects as cs on cc.course_id=cs.course_id
+        INNER JOIN edtech.current_videos AS cv ON cv.subject_id = cs.subject_id
+        where cc.course_name = ? and cs.subject_name = ?;`,[course_name,subject_name])
+        // console.log(result)
+        return result.map(item => item.video_chapter)
+    } catch (error) {
+        return "overview_subject ERROR"
+    }
+}
+// overview_chapter('upsc 2025','history')
+module.exports = { getNote,getNotes, createNote,testing,login ,pool,videoOverview,VideoUserAcess,overview_courses,overview_subject,overview_chapter };
 
