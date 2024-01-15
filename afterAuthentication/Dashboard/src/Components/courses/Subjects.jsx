@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-export const CourseDetailComponent = () => {
+export const Subjects = () => {
   const { id } = useParams();
 
   // Fetch course details based on the id and render the detail view

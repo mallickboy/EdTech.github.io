@@ -23,14 +23,14 @@ function SQLEditViaLocalhost(express,app) {
         res.status(201).send(note);
     })
     // getting access for user
-    app.get("/useracess/:course/:subject/:chapter",async (req,res)=>{
+    app.get("/useraccess/:course/:subject/:chapter",async (req,res)=>{
         var course = req.params.course;
         var subject = req.params.subject;
         var chapter = req.params.chapter;
         var notes=await VideoUserAcess(course,subject,chapter);
         res.send(notes)
     })
-    app.get("/useracess/link/:course/:subject/:chapter",async (req,res)=>{
+    app.get("/useraccess/link/:course/:subject/:chapter",async (req,res)=>{
         var course = req.params.course;
         var subject = req.params.subject;
         var chapter = req.params.chapter;
