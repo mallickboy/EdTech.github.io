@@ -1,4 +1,4 @@
-const { getNote,getNotes, createNote,videoOverview,VideoUserAcess } = require('./profileSQL.js');
+const { getNote,getNotes, createNote,videoOverview,VideoUserAcess,overview_courses,overview_subject,overview_chapter } = require('./profileSQL.js');
 function SQLEditViaLocalhost(express,app) {
     app.use(express.json())
     async function usageExample() {
@@ -50,16 +50,16 @@ function SQLEditViaLocalhost(express,app) {
     app.get("/overview/:course/:subject",async (req,res)=>{
         var course = req.params.course;
         var subject = req.params.subject;
-        var notes=await videoOverview(course,subject,0);
+        var notes=await overview_chapter(course,subject);
         res.send(notes)
     })
     app.get("/overview/:course",async (req,res)=>{
         var course = req.params.course;
-        var notes=await videoOverview(course,0,0);
+        var notes=await overview_subject(course);
         res.send(notes)
     })
     app.get("/overview",async (req,res)=>{        
-        var notes=await videoOverview(0,0,0);
+        var notes=await overview_courses();
         res.send(notes)
     })
 
