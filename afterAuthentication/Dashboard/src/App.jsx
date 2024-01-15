@@ -19,8 +19,9 @@ import { OnlineTest } from "./Components/OnlineTest";
 import { Quiz } from "./Components/Quiz";
 import { Performance } from "./Components/Performance";
 import { CoursesComponent } from "./Components/courses/Courses";
-import { CourseDetailComponent } from "./Components/courses/Subjects";
-
+import { Chapters } from "./Components/courses/Chapters";
+import { Subjects } from "./Components/courses/Subjects";
+import { Videos } from "./Components/courses/Videos";
 function App() {
   const [count, setCount] = useState(0);
   const [userData, setuserData] = useState(null);
@@ -66,9 +67,13 @@ function App() {
             {/* <Route index element={<Profile />} /> */}
             <Route path="/profile" element={<Profile userData={userData} />} />
 
-            <Route path="/courses" element={<CoursesComponent />} >
-            <Route path=":id" element={<Subjects />} >
-            </Route>
+            <Route path="/courses" element={<CoursesComponent />} />
+            <Route path="/courses/:course" element={<Subjects />} />
+            <Route path="/courses/:course/:subject" element={<Chapters />} />
+            <Route
+              path="/courses/:course/:subject/:chapter"
+              element={<Videos />}
+            />
             <Route path="/onlineTest" element={<OnlineTest />} />
             <Route path="/performance" element={<Performance />} />
             <Route path="/quiz" element={<Quiz />} />

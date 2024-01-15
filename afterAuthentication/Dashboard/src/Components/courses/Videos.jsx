@@ -1,11 +1,10 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-
 import axios from "axios";
-export const Subjects = () => {
-  const { course } = useParams();
-  const [subjects, setsubjects] = useState([]);
+export const Videos = () => {
+  const { course, subject, chapter } = useParams();
+  const [videos, setvideos] = useState([]);
   const [insidecourse, setinsidecourse] = useState(false);
 
   const api = axios.create({
@@ -14,11 +13,11 @@ export const Subjects = () => {
   });
   useEffect(() => {
     api
-      .get(`/overview/${course}`)
+      .get(`/overview/${course}/${subject}/${chapter}`)
       .then((response) => {
         // Handle success
         console.log("Data:", response.data);
-        setsubjects(response.data);
+        setvideos(response.data);
       })
       .catch((error) => {
         // Handle error
@@ -26,23 +25,17 @@ export const Subjects = () => {
       });
   }, []);
   // Fetch course details based on the id and render the detail view
-  console.log("course" + course);
+  console.log("chapter id" + chapter);
   return (
     <div>
       <h2>Course Detail View</h2>
-      <p>Details for course with ID: {course}</p>
+      <p>Details for chapter with ID: {chapter}</p>
       <div className="component" id="courses">
-        {subjects.map((subject) => (
-          <Link
-            key={subject}
-            to={`/courses/${course}/${encodeURIComponent(subject)}`}
-            className="courseCard"
-          >
-            <div className="course">
-              <div className="title">{subject}</div>
-              {/* <div className="desc">{course.description}</div> */}
-            </div>
-          </Link>
+        {videos.map((video) => (
+          <div className="course" key={video}>
+            <div className="title">{video.video_title}</div>
+            {/* <div className="desc">{course.description}</div> */}
+          </div>
         ))}
       </div>
     </div>

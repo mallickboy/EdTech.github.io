@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 export const CoursesComponent = () => {
   const api = axios.create({
     baseURL: "http://localhost:8080", // Replace with your base URL
@@ -11,7 +11,7 @@ export const CoursesComponent = () => {
   const [insidecourse, setinsidecourse] = useState(false);
   useEffect(() => {
     api
-      .get("/getcourses")
+      .get("/overview")
       .then((response) => {
         // Handle success
         console.log("Data:", response.data);
@@ -28,7 +28,7 @@ export const CoursesComponent = () => {
       {!insidecourse && (
         <div className="component" id="courses">
           {courses.map((course) => (
-            <Link key={course} to={`/courses/${course}`} className="courseCard">
+            <Link key={course} to={`/courses/${encodeURIComponent(course)}`} className="courseCard">
               <div className="course">
                 <div className="title">{course}</div>
                 {/* <div className="desc">{course.description}</div> */}
