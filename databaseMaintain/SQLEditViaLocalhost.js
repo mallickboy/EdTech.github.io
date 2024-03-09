@@ -1,4 +1,4 @@
-const { getNote,getNotes, createNote,videoOverview,VideoUserAcess,overview_courses,overview_subject,overview_chapter } = require('./profileSQL.js');
+const { getNote,getNotes, createNote,overview_topic,overview_courses,overview_subject,overview_chapter } = require('./profileSQL.js');
 function SQLEditViaLocalhost(express,app) {
     app.use(express.json())
     async function usageExample() {
@@ -23,28 +23,14 @@ function SQLEditViaLocalhost(express,app) {
         res.status(201).send(note);
     })
     // getting access for user
-    app.get("/useraccess/:course/:subject/:chapter",async (req,res)=>{
-        var course = req.params.course;
-        var subject = req.params.subject;
-        var chapter = req.params.chapter;
-        var notes=await VideoUserAcess(course,subject,chapter);
-        res.send(notes)
-    })
-    app.get("/useraccess/link/:course/:subject/:chapter",async (req,res)=>{
-        var course = req.params.course;
-        var subject = req.params.subject;
-        var chapter = req.params.chapter;
-        var notes=await VideoUserAcess(course,subject,chapter);
-        // res.send(notes[0].video_url)
-        res.send(notes.map(item => item.video_url))
-    })
+    
     // getting course overview for visitors
 
     app.get("/overview/:course/:subject/:chapter",async (req,res)=>{
         var course = req.params.course;
         var subject = req.params.subject;
         var chapter = req.params.chapter;
-        var notes=await videoOverview(course,subject,chapter);
+        var notes=await overview_topic(course,subject,chapter);
         res.send(notes)
     })
     app.get("/overview/:course/:subject",async (req,res)=>{

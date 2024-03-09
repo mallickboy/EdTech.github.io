@@ -22,6 +22,7 @@ import { CoursesComponent } from "./Components/courses/Courses";
 import { Chapters } from "./Components/courses/Chapters";
 import { Subjects } from "./Components/courses/Subjects";
 import { Videos } from "./Components/courses/Videos";
+import {Upload} from "./Components/Upload"
 function App() {
   const [count, setCount] = useState(0);
   const [userData, setuserData] = useState(null);
@@ -77,6 +78,7 @@ function App() {
             <Route path="/onlineTest" element={<OnlineTest />} />
             <Route path="/performance" element={<Performance />} />
             <Route path="/quiz" element={<Quiz />} />
+            <Route path="/upload" element={<Upload />} />
           </Route>
         </Routes>
       </BrowserRouter>
@@ -161,6 +163,20 @@ const Root = () => {
               </div>
               <div className="menutext" data-opt="quizes">
                 Quiz
+              </div>
+            </NavLink>
+            <NavLink to="/upload" className="menu menu-item">
+              <div className="icon">
+                <span
+                  className={`material-symbols-rounded ${
+                    location.pathname === "/upload" ? "active" : ""
+                  }`}
+                >
+                  upload
+                </span>
+              </div>
+              <div className="menutext" data-opt="uploads">
+                Upload
               </div>
             </NavLink>
             <div className="menu menu-item logout" data-opt="Logout">
